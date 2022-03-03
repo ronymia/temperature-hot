@@ -7,5 +7,8 @@ const searchTemperature = () => {
     // console.log(url);
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => displayTemperature(data));
+}
+const displayTemperature = temperature => {
+    console.log(temperature);
 };
