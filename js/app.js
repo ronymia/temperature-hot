@@ -1,7 +1,7 @@
 const API_KEY = `5ef6423e5a17bc7ca85f13c6a1f6bac6`
 
 const searchTemperature = () => {
-    const city = document.getElementById('city-name').value;
+    const city = document.getElementById('get-city-name').value;
     // console.log(city);
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&&units=metric`
     // console.log(url);
@@ -15,6 +15,7 @@ const setInnerText = (id, text) => {
 
 const displayTemperature = temperature => {
     console.log(temperature);
-    setInnerText('city', temperature.name);
+    setInnerText('city-name', temperature.name);
     setInnerText('temperature', temperature.main.temp);
+    setInnerText('set-condition', temperature.weather[0].main);
 };
